@@ -40,7 +40,7 @@
 
      #+BEGIN_SRC common-lisp
        (with-open-file (*standard-output* "~/my-db.index" :direction :output)
-         (files-index:dump-db))`
+         (files-index:dump-db))
      #+END_SRC 
 
   5. Restore indexed db:
