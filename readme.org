@@ -4,7 +4,9 @@
 * How to use
   1. Index directory first:
 
-  `(files-index:index-dir "~/")`
+     #+BEGIN_SRC common-lisp
+     (files-index:index-dir "~/")
+     #+END_SRC
 
   2. Search with any valid lisp predicates using predefined files properties:
      1. `size` file size in bytes, `(files-index:to-bytes 5 :m)` can help you convert size.
@@ -12,25 +14,41 @@
      3. `path-tags` list of tags for file path
      4. `name-tags` list of tags for file name
 
-  `(files-index:lookup (null type))` ; finds files without extension
+     #+BEGIN_SRC common-lisp
+       ; finds files without extension
+       (files-index:lookup (null type))
+     #+END_SRC     
 
-  `(files-index:lookup (> size (files-index:to-bytes 5 :g)))` ; finds files larger than 5Gb
+     #+BEGIN_SRC common-lisp
+       ; finds files larger than 5Gb
+       (files-index:lookup (> size (files-index:to-bytes 5 :g)))
+     #+END_SRC
 
-  `(files-index:lookup (and (find "artist" name-tags :test 'equal) (equal type "part")))` ; find unfinished torrends with "artist" in name
+     #+BEGIN_SRC common-lisp
+       ; find unfinished torrends with "artist" in name
+       (files-index:lookup (and (find "artist" name-tags :test 'equal)
+                                (equal type "part")))
+     #+END_SRC
 
   3. Check file properties:
 
-  `(files-index:show-props "~/my-best-file.txt")`
+     #+BEGIN_SRC common-lisp
+       (files-index:show-props "~/my-best-file.txt")
+     #+END_SRC     
 
   4. Save indexed db:
 
-  `(with-open-file (*standard-output* "~/my-db.index" :direction :output)
-  (files-index:dump-db))`
+     #+BEGIN_SRC common-lisp
+       (with-open-file (*standard-output* "~/my-db.index" :direction :output)
+         (files-index:dump-db))`
+     #+END_SRC 
 
   5. Restore indexed db:
-
-  `(with-open-file (in "~/my-db.index" :direction :input)
-  (files-index:restore-db in))`
+     
+     #+BEGIN_SRC common-lisp
+       (with-open-file (in "~/my-db.index" :direction :input)
+         (files-index:restore-db in))
+     #+END_SRC 
 
   6. Goto step `2`
 
