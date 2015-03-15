@@ -13,7 +13,9 @@ Files indexer and lookuper
    4. `name-tags` list of tags for file name
 
 `(files-index:lookup (null type))` ; finds files without extension
+
 `(files-index:lookup (> size (files-index:to-bytes 5 :g)))` ; finds files larger than 5Gb
+
 `(files-index:lookup (and (find "artist" name-tags :test 'equal) (equal type "part")))` ; find unfinished torrends with "artist" in name
 
 3. Check file properties:
@@ -34,22 +36,22 @@ Files indexer and lookuper
 
 # TODO
 * Add more files properties
-** creation time
-** modification time
-** access time
-** owner
-** group
-** permissions
-** etc
+ * creation time
+ * modification time
+ * access time
+ * owner
+ * group
+ * permissions
+ * etc
 
 * Improve lookup language
-** easier lookup in tags
-** lookup part of tag
-** easier size conversion
-** limit results
+ * easier lookup in tags
+ * lookup part of tag
+ * easier size conversion
+ * limit results
 
 * External interface
-** unix-like?
-** web?
-** 9P?
+ * unix-like?
+ * web?
+ * 9P?
 
