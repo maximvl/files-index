@@ -36,22 +36,22 @@
 
 * TODO
 ** Add more files properties
-*** creation time
-*** modification time
-*** access time
-*** owner
-*** group
-*** permissions
-*** etc
+   - creation time
+   - modification time 
+   - access time
+   - owner
+   - group
+   - permissions
+   - etc
 
 ** Improve lookup language
-*** easier lookup in tags
-*** lookup part of tag
-*** easier size conversion
-*** limit results
+   - easier lookup in tags
+   - lookup part of tag
+   - easier size conversion
+   - limit results
 
 ** External interface
-*** unix-like?
-*** web?
-*** 9P?
+   - unix-like?
+   - web?
+   - 9P?
 
