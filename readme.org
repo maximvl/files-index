@@ -50,7 +50,7 @@
          (files-index:restore-db in))
      #+END_SRC 
 
-  6. Goto step `2`
+  6. Goto step ~2~
 
 * TODO
 ** Add more files properties
