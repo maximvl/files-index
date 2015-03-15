@@ -9,7 +9,7 @@
      #+END_SRC
 
   2. Search with any valid lisp predicates using predefined files properties:
-     1. ~size~ file size in bytes, `(files-index:to-bytes 5 :m)` can help you convert size.
+     1. ~size~ file size in bytes, ~(files-index:to-bytes 5 :m)~ can help you convert size.
      2. ~type~ is file extension. nil if file has no extension 
      3. ~path~ list of tags for file path
      4. ~name~ list of tags for file name
