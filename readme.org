@@ -11,8 +11,8 @@
   2. Search with any valid lisp predicates using predefined files properties:
      1. ~size~ file size in bytes, `(files-index:to-bytes 5 :m)` can help you convert size.
      2. ~type~ is file extension. nil if file has no extension 
-     3. ~path-tags~ list of tags for file path
-     4. ~name-tags~ list of tags for file name
+     3. ~path~ list of tags for file path
+     4. ~name~ list of tags for file name
 
      #+BEGIN_SRC common-lisp
        ; finds files without extension
@@ -25,8 +25,8 @@
      #+END_SRC
 
      #+BEGIN_SRC common-lisp
-       ; find unfinished torrends with "artist" in file name
-       (files-index:lookup (and (find "artist" name-tags :test 'equal)
+       ; find unfinished torrents with "artist" in file name
+       (files-index:lookup (and (find "artist" name :test 'equal)
                                 (equal type "part")))
      #+END_SRC
 
@@ -63,8 +63,8 @@
    - etc
 
 ** Improve lookup language
-   - easier lookup in tags
-   - lookup part of tag
+   - easier lookups in tags
+   - lookup substrings in tags
    - easier size conversion
    - limit results
 

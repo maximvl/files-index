@@ -83,13 +83,13 @@
     (let ((type (pathname-type path)))
       (when type (string-downcase type))))
 
-(defproperty path-tags (reduce #'(lambda (acc n)
+(defproperty path (reduce #'(lambda (acc n)
                                    (append acc (get-tags n)))
                                (split-path 
                                 (cl-fad:pathname-directory-pathname
                                  path)) :initial-value nil))
 
-(defproperty name-tags (get-tags (pathname-name path)))
+(defproperty name (get-tags (pathname-name path)))
 
 ;; lookups
 
